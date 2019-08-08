@@ -1,5 +1,7 @@
 DESCRIPTION
 
+This read me file guides the user in order to be able to run the output generated in the poster pdf. Please refer to the team10 report for the write up of this proyect.
+
 Data sources:
 Area Code Lat Long: https://github.com/ravisorg/Area-Code-Geolocation-Database
 Dataset: https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/3xyp-aqkj
