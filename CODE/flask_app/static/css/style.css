@@ -1,0 +1,52 @@
+#prediction-div {
+    padding-top: 20px;
+}
+
+#summary-div {
+    padding-top: 20px;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:link {
+	background-color: aliceblue;
+}
+
+a:visited {
+	background-color: #f7f7f7;
+}
+
+a:hover {
+	background-color: #FDF4DF;
+}
+body {
+	font-family: Avenir, sans-serif;
+}
+
+.bar {
+    fill: steelblue;
+}
+.bar--positive {
+    fill: steelblue;
+}       
+
+.bar--negative {
+    fill: darkorange;
+}
+.axis {
+    font-size: 13px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.label {
+    font-size: 13px;
+}
