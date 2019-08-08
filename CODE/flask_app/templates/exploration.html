@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% set active_page="exploration" %}
+{% block header %}
+{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/exploration.css') }}" >
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="//d3js.org/topojson.v3.min.js"></script>
+    <script src="//d3js.org/d3-color.v1.min.js"></script>
+    <script src="//d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="//d3js.org/d3-hexbin.v0.2.min.js"></script>
+    
+{% endblock %}
+{% block content %}
+
+<h1>Spam Calls in the US - <span id="header-dataset">Overall</span></h1>
+<h4>Hover over the map to see more detail. Click on a hexagon to see the cities, states and zip codes where spam calls occurred within it.</h4>
+
+<div id="container">
+
+	<div id="vis-container">
+		<div id="vis"></div>
+
+		<div id="select-size">
+			<div id="select-size-intro">Change the size of the hexagons: </div>
+			<select></select>
+		</div>
+
+		<div id="select-data">
+			<div id="select-data-intro">Compare spam calls based on issue </div>
+			<select></select>
+		</div>
+
+		<div id="change-scale">
+			<div id="change-scale-intro">Change the color scale interpolator: </div>
+			<input type="range" id="change-scale-input" min="1">
+			<div id="change-scale-value"></div>
+		</div>
+
+	<div id="attribution"><a href="https://opendata.fcc.gov/Consumer/Consumer-Complaints-Data-Unwanted-Calls/vakf-fz8e">Data source: FCC</a></div>
+
+	</div>
+
+	<div id="market-list"></div>
+
+</div>
+
+
+<div id="tooltip">
+	<div id="tip-header">
+		<h1></h1>
+		<p></p>
+	</div>
+</div>
+<script src="{{ url_for('static',filename='js/exploration.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% set active_page="prediction" %}
+{% block header %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="{{ url_for('static',filename='js/prediction-viz.js') }}"></script>
+
+{% endblock %}
+{% block content %}
+
+<div id="prediction-div" class="container-fluid">
+  <form >
+      <p><b>Please enter all information about the call you would like to predict.</b></p>
+      <p style="font-size:12px;">Once submitted, a prediction will be generated and visualized within a few seconds.</p>
+      <div class="form-row">
+
+          <div class="col-3">
+              <label for="prediction-time">Time of call</label>
+              <input type="time" name="prediction-time" id="prediction-time" required>
+
+          </div>
+          <div class="col-3">
+
+              <label for="prediction-date">Date of call</label>
+              <input type="date" name="prediction-date" id="prediction-date" required>
+          </div>
+      </div>
+      <div class="form-row form-group">
+        <div class="col-3">
+            <label for="source-area-code">Source Area Code</label>
+            <input min="201" max="989" type="number" name="source-area-code" id="source-area-code" required>
+
+        </div>
+        <div class="col-3">
+
+            <label for="dest-area-code">Recipient Area Code</label>
+            <input min="201" max="989" type="number" dest-area-code" id="dest-area-code" required>
+        </div>
+      </div>
+    <button type="button" class="input-submit btn btn-primary" onClick="send_prediction_request()">Submit</button>
+  </form>
+  <div class="row">
+    <div class="col-12" id="graphic">
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}
